@@ -13,6 +13,14 @@ public class CheckingBalance extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cbal);
 
+        Button yesAccount = (Button) findViewById(R.id.yes);
+
+        yesAccount.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(CheckingBalance.this, Signin.class));
+            }
+        });
+
         Button noAccount = (Button) findViewById(R.id.no);
 
         noAccount.setOnClickListener(new View.OnClickListener(){
@@ -22,13 +30,7 @@ public class CheckingBalance extends AppCompatActivity {
         });
 
 
-        Button yesAccount = (Button) findViewById(R.id.yes);
 
-        yesAccount.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(new Intent(CheckingBalance.this, Signin.class));
-            }
-        });
 
 
 

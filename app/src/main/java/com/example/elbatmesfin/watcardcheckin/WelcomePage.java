@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WelcomePage extends AppCompatActivity {
     private static boolean isEdit = false;
@@ -25,7 +26,7 @@ public class WelcomePage extends AppCompatActivity {
         final AccountDetails accDetails = dbHelper.getAccount(theAccEmail);
 
         TextView textView = (TextView) findViewById(R.id.balanceMessage);
-        final String balanceCheck = "Current Balance " + accDetails.getTotalBalance();
+        final String balanceCheck = "Current Balance: $" + accDetails.getTotalBalance();
         textView.setText(balanceCheck);
 
 
@@ -35,9 +36,22 @@ public class WelcomePage extends AppCompatActivity {
         updateBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 accDetails.setTotalBalance(23);
+                dbHelper.updateAccount(accDetails);
                 TextView textView = (TextView) findViewById(R.id.balanceMessage);
-                String balanceCheck = "Your current balance is " + accDetails.getTotalBalance();
+                String balanceCheck = "Current Balance: $" + accDetails.getTotalBalance();
                 textView.setText(balanceCheck);
+            }
+        });
+
+
+        Button signoutBtn = (Button) findViewById(R.id.Signout);
+
+        signoutBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Toast.makeText(WelcomePage.this, "Signing out! Goodbye",
+                        Toast.LENGTH_LONG).show();
+                startActivity(new Intent(WelcomePage.this, MainActivity.class));
+
             }
         });
 
