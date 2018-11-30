@@ -1,6 +1,8 @@
 package com.example.elbatmesfin.watcardcheckin;
 
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +22,7 @@ public class WelcomePage extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_page);
 
         //pulling the string from the signup page, so that we can pull the correct record
-        String theAccEmail = getIntent().getStringExtra("theEmail");
+        final String theAccEmail = getIntent().getStringExtra("theEmail");
 
         dbHelper = new SQLiteDBHelper(this);
         final AccountDetails accDetails = dbHelper.getAccount(theAccEmail);
@@ -35,11 +37,14 @@ public class WelcomePage extends AppCompatActivity {
 
         updateBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                accDetails.setTotalBalance(23);
-                dbHelper.updateAccount(accDetails);
-                TextView textView = (TextView) findViewById(R.id.balanceMessage);
-                String balanceCheck = "Current Balance: $" + accDetails.getTotalBalance();
-                textView.setText(balanceCheck);
+                //DialogFragment changeBal = new updateModal();
+
+                //changeBal.show(getSupportFragmentManager(), "updating");
+
+                Intent intent = new Intent(WelcomePage.this, updateModal.class);
+                intent.putExtra("theEmail", theAccEmail);
+                startActivity(intent);
+
             }
         });
 

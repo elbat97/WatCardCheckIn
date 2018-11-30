@@ -5,4 +5,8 @@
     <string name="no">no</string>
     <string name="SignUp">Sign Up</string>
     <string name="title_activity_signin">Sign In</string>
+    <string name="title_activity_update_modal">updateModal</string>
+    <string name="currBal">What is your current balance?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 </resources>
