@@ -21,16 +21,18 @@
         android:id="@+id/balanceMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
         android:text="Your current balance is "
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/WelcomePage"/>
+        app:layout_constraintTop_toBottomOf="@id/WelcomePage" />
 
     <Button
         android:id="@+id/updateBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="28dp"
         android:text="Update Balance"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/WelcomePage" />
@@ -39,8 +41,11 @@
         android:id="@+id/Signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Sign Out"
+        app:layout_constraintHorizontal_bias="0.76"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/updateBalance" />
+
 </android.support.constraint.ConstraintLayout>
