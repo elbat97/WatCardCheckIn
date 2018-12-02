@@ -60,6 +60,16 @@ public class WelcomePage extends AppCompatActivity {
             }
         });
 
+        Button foodBtn = (Button) findViewById(R.id.food);
+
+        foodBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(WelcomePage.this, Food.class));
+
+            }
+        });
+
+
     }
 
 

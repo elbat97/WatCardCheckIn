@@ -24,7 +24,8 @@
         <activity android:name=".WelcomePage" />
         <activity
             android:name=".updateModal"
-            android:label="@string/title_activity_update_modal"></activity>
+            android:label="@string/title_activity_update_modal" />
+        <activity android:name=".Food"></activity>
     </application>
 
 </manifest>
