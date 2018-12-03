@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class WelcomePage extends AppCompatActivity {
     private static boolean isEdit = false;
+    private String Emailid = "";
     SQLiteDBHelper dbHelper = null;
 
     @Override
@@ -23,6 +24,7 @@ public class WelcomePage extends AppCompatActivity {
 
         //pulling the string from the signup page, so that we can pull the correct record
         final String theAccEmail = getIntent().getStringExtra("theEmail");
+        Emailid = theAccEmail;
 
         dbHelper = new SQLiteDBHelper(this);
         final AccountDetails accDetails = dbHelper.getAccount(theAccEmail);
@@ -64,7 +66,9 @@ public class WelcomePage extends AppCompatActivity {
 
         foodBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(WelcomePage.this, Food.class));
+                Intent intent = new Intent(WelcomePage.this, Food.class);
+                intent.putExtra("theEmail", Emailid);
+                startActivity(intent);
 
             }
         });
