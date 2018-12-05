@@ -99,7 +99,7 @@ public class AccountDetails {
         String[] foodItems = new String[food.size()];
         int i = 0;
         for(Expense n: food){
-            foodItems[i] = n.item;
+            foodItems[i] = n.item + " " + Integer.toString(n.value);
         }
         return foodItems;
     }
