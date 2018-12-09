@@ -33,7 +33,7 @@ public class Food extends AppCompatActivity {
         recyclerView.setAdapter(new MyAdapter(this, accDetails.getListItemsF()));
 
 
-
+        setContentView(R.layout.activity_expense_list);
         Button addExpBtn = (Button) findViewById(R.id.addExp);
 
         addExpBtn.setOnClickListener(new View.OnClickListener(){
